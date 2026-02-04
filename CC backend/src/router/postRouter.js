@@ -1,4 +1,3 @@
-
 const express = require("express");
 const router = express.Router();
 
@@ -13,7 +12,6 @@ router.post("/", protect, postController.createPost);
 
 router.get("/:id", postController.getPostsById);
 router.delete("/:id", protect, postController.deletePost);
-
 router.post("/:id/comments", protect, postController.addComment);
 
 module.exports = router;

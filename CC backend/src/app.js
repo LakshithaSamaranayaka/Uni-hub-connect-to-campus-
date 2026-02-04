@@ -4,8 +4,8 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const rateLimit = require("express-rate-limit");
 
-const authRoutes = require("./router/authRouter");      
-const postRoutes = require("./router/postRouter");
+const authRouter = require("./router/authRouter");      
+const postRouter = require("./router/postRouter");
 
 const app = express();
 
@@ -30,7 +30,7 @@ app.get("/api/health", (req, res) => {
 });
 
 // Routes
-app.use("/api/auth", authRoutes);
-app.use("/api/posts", postRoutes);
+app.use("/api/auth", authRouter);
+app.use("/api/posts", postRouter);
 
 module.exports = app;
