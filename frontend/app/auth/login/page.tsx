@@ -18,7 +18,7 @@ export default function LoginPage() {
     <div className={styles.right}>
     <h2>Hello, Friend !</h2>
     <p> Enter your personal details and start journey with us.</p>
-    <button className={`${styles["btn"]} ${styles.outline}`}>Sign In</button>
+    <button className={`${styles["btn"]} ${styles.outline}`}>Sign Up</button>
 
           <div className={styles.social}>
               <button type="button" className={styles.socialBtn}>
