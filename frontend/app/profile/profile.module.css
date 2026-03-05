@@ -1,0 +1,149 @@
+.page1 {
+  min-height: 100vh;
+
+  background: 
+  linear-gradient(180deg,#8620ac 20%, #111 50%);
+}
+/* main card */
+.card {
+  background: white;
+  width: 1100px;
+  padding: 100px;
+  border-radius: 30px;
+  box-shadow: 0 25px 60px rgba(0,0,0,.2);
+  position: relative;
+  margin-left: 300px;
+  margin-top: -710px;
+}
+.topBtn{
+  margin-top: -80px;
+  border: 0;
+  background: transparent;
+  font-weight: 700;
+  color: #222;
+  cursor: pointer;
+  padding: 10px 24px;
+  border-radius: 10px;
+  transition: 0.2s ease;
+}
+.topBtn:hover {
+  background: rgba(0, 0, 0, 0.06); 
+}
+
+.logoutBtn:hover {
+  background: rgba(255, 0, 90, 0.10);
+  color: #c9003d;
+}
+
+.avatarWrap {
+  position: absolute;
+  top: -62px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.95);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+}
+
+.avatar {
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.name {
+  margin-top: 58px;
+  text-align: center;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  color: #3a3a3a;
+}
+
+.location {
+  text-align: center;
+  margin-top: 6px;
+  color: #777;
+  font-weight: 500;
+}
+
+.meta {
+  text-align: center;
+  margin-top: 22px;
+  color: #666;
+  line-height: 1.65;
+  font-weight: 500;
+}
+
+.pitch {
+  text-align: center;
+  margin: 26px auto 0;
+  max-width: 660px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.5;
+}
+.linkBtn {
+  margin-top: 90px;
+  border: 0;
+  background: transparent;
+  font-weight: 700;
+  color: #222;
+  cursor: pointer;
+  padding: 10px 24px;
+  border-radius: 10px;
+  transition: 0.2s ease;
+}
+.linkBtn:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.cta {
+  margin-top: 40;
+  margin-left: 190px;
+  border: 0;
+  padding: 12px 28px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #F7E998, #FF4747);
+  color: rgb(89, 76, 76);
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 12px 25px rgba(123, 44, 255, 0.25);
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.cta:hover {
+  color: #111;
+  transform: translateY(-1px);
+  filter: brightness(1.02);
+}
+.logoutBtn {
+  margin-left:200px;
+  border: 0;
+  background: transparent;
+  font-weight: 700;
+  color: #222;
+  cursor: pointer;
+  padding: 10px 24px;
+  border-radius: 10px;
+  transition: 0.2s ease;
+}
+
+
+
+@media (max-width: 700px) {
+  .bottomRow {
+    flex-direction: column;
+  }
+
+  .cta {
+    width: 100%;
+  }
+
+  .linkBtn {
+    width: 100%;
+    text-align: center;
+  }
+}
