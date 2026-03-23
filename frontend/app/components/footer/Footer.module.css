@@ -1,0 +1,113 @@
+.footer {
+  width: 100%;
+  margin-top: 250px;
+  height: 420px;
+  border-top: 1px solid rgba(255,255,255,0.25);
+  background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02));
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+.footerText {
+  color: #d372f6;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 60px;
+  margin-left: 110px;
+  margin-right: 1210px;
+  background: linear-gradient(270deg, #ff5eff, #8811a3, #460451, #ff5eff);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aurora 10s linear infinite;
+  text-transform: uppercase;
+}
+@keyframes aurora {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+ .footerImage1 {
+  margin-top: 90px;
+  margin-left: 350px;
+}
+.footerImage1:hover {
+  transform: translateY(-2px);
+  opacity: 0.8;
+}
+.footerImage2 {
+  margin-top: -85px;
+  margin-left: 110px;
+}
+.footerImage2:hover {
+  transform: translateY(-2px);
+  opacity: 0.8;
+}
+.footertitles {
+  font-weight: 700;
+  font-size: 20px;
+  margin-left: 650px;
+  margin-top: -280px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.footerBtns{
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: flex-start;
+  margin: 35px 0 0 650px;
+  padding: 0;
+}
+.footerBtns1{
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: flex-start;
+  margin: -134px 0 0 910px;
+  padding: 0;
+}
+.footerBtns2{
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: flex-start;
+  margin: -140px 0 0 1170px;
+  padding: 0;
+}
+.footerBtns3{
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: flex-start;
+  margin: -249px 0 0 1420px;
+  padding: 0;
+}
+.footerLink{
+  border: none;
+  color: #fff;
+  font-size: 18px;     
+  text-decoration: none;
+  cursor: pointer;
+}
+.footerLink:hover{
+  text-decoration: underline;
+  transform: translateY(-2px);
+  transition: width 0.3s ease;
+}
+.socialIcons {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  margin-left: 1415px;
+}
+.socialIcons img {
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.socialIcons img:hover {
+  transform: translateY(-2px);
+  opacity: 0.8;
+}
