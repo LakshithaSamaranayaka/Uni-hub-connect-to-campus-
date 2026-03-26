@@ -145,10 +145,11 @@
 }
 
 .subBtn {
+  display: block;
   font-weight: 50;
   width: 100%;
-  padding: 8px 12px;
-  margin: 6px 0;
+  padding: 10px 40px;
+  margin: 9px 0;
   background: rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(0, 0, 0, 0.4);
   border-radius: 6px;

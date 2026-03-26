@@ -1,4 +1,6 @@
+import Link from "next/link";
 import Image from "next/image";
+import Footer from "../components/footer/Footer";
 import Navbar from "../components/Navbar";
 import styles from "./home.module.css";
 
@@ -63,7 +65,7 @@ export default function HomePage() {
           <div className={styles.card}>
             <h4 className={styles.cardTitle}>Computing</h4>
             <div className={styles.subBtns}>
-              <button className={styles.subBtn}>Programming notes</button>
+              <Link href="/computing/programming-notes" className={styles.subBtn}>Programming notes</Link>
                 <button className={styles.subBtn}>Coding resources</button>
                 <button className={styles.subBtn}>Project teams</button>
             </div>
@@ -168,6 +170,7 @@ export default function HomePage() {
       <p className={styles.middleText2}>Uni Hub.</p> 
       <p className={styles.middleText3}>Built  For Students. Powered by Community.</p>
     </section>
+        <Footer />
     
   
     </div>
