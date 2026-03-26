@@ -125,12 +125,22 @@
 }
 
 .card {
-  width: 240px;
-  background: rgb(192, 188, 188);
+  box-shadow: 0 0 25px rgba(180, 120, 255, 0.8);
+  box-shadow: 0 0 50px rgb(166, 77, 186);
+  transform: scale(1.02);
+  transition: 0.3s ease;
+  background: rgb(255, 255, 255);
+  width: 240px;  
   color: #111;
   border-radius: 14px;
   padding: 14px 16px 16px;
   box-shadow: 0 14px 30px rgb(95, 50, 103);
+}
+.card:hover {
+  box-shadow: 0 0 25px rgb(145, 33, 160);
+  box-shadow: 0 0 50px rgb(143, 41, 157);
+  transform: scale(1.02);
+  transition: 0.3s ease;
 }
 
 .cardTitle {
@@ -204,7 +214,7 @@
 }
 .middlebarImg {
   margin-left: 80px;
-  margin-top: 40px;
+  margin-top: 30px;
   height: auto;
 }
 .middlebarImg1 {
@@ -234,11 +244,14 @@
   font-size: 25px;
   margin-top: 10px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> e8450e9746fa4cddee84773904373f6b9286f166
 
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
     padding-top: 40px;

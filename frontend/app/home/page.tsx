@@ -2,13 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 import Footer from "../components/footer/Footer";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer"; 
 import styles from "./home.module.css";
 
 export default function HomePage() {
   return (
     <div className={styles.page}>
       <Navbar />
-
+        
 
       <section className={styles.hero}>
         <div className={styles.heroLeft}>
@@ -170,9 +171,14 @@ export default function HomePage() {
       <p className={styles.middleText2}>Uni Hub.</p> 
       <p className={styles.middleText3}>Built  For Students. Powered by Community.</p>
     </section>
+<<<<<<< HEAD
         <Footer />
     
   
+=======
+    <Footer/>
+    
+>>>>>>> e8450e9746fa4cddee84773904373f6b9286f166
     </div>
   );
 }
