@@ -66,28 +66,28 @@ export default function HomePage() {
             <h4 className={styles.cardTitle}>Computing</h4>
             <div className={styles.subBtns}>
               <Link href="/computing/programming-notes" className={styles.subBtn}>Programming notes</Link>
-                <Link href="/computing/coding-resources" className={styles.subBtn}>Coding resources</Link>
-                <button className={styles.subBtn}>Project teams</button>
+              <Link href="/computing/coding-resources" className={styles.subBtn}>Coding resources</Link>
+              <Link href="/computing/project-teams" className={styles.subBtn}>Project teams</Link>  
             </div>
           </div>
 
           <div className={styles.card}>
             <h4 className={styles.cardTitle}>Business</h4>
             <ul className={styles.list}>
-              <button className={styles.subBtn}>Case studies</button>
-              <button className={styles.subBtn}>Business news</button>
-              <button className={styles.subBtn}>Market trends</button>
-              <button className={styles.subBtn}>Internship opportunities</button>
-              <button className={styles.subBtn}>Career advice</button>
+              <Link href="/business/case-studies" className={styles.subBtn}>Case studies</Link>
+              <Link href="/business/news" className={styles.subBtn}>Business news</Link>
+              <Link href="/business/market-trends" className={styles.subBtn}>Market trends</Link>
+              <Link href="/business/internships" className={styles.subBtn}>Internship opportunities</Link>
+              <Link href="/business/career-advice" className={styles.subBtn}>Career advice</Link>
             </ul>
           </div>
 
           <div className={styles.card}>
             <h4 className={styles.cardTitle}>Engineering</h4>
             <ul className={styles.list}>
-                <button className={styles.subBtn}>Engineering notes</button> 
-                <button className={styles.subBtn}>Project ideas</button>
-                <button className={styles.subBtn}>Internship opportunities</button>
+              <Link href="/engineering/engineering-notes" className={styles.subBtn}>Engineering notes</Link>
+              <Link href="/engineering/project-ideas" className={styles.subBtn}>Project ideas</Link>
+              <Link href="/engineering/internships" className={styles.subBtn}>Internship opportunities</Link>
             </ul>
           </div>
         </div>
