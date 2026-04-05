@@ -75,9 +75,9 @@ export default function HomePage() {
             <h4 className={styles.cardTitle}>Business</h4>
             <ul className={styles.list}>
               <Link href="/business/case-studies" className={styles.subBtn}>Case studies</Link>
-              <Link href="/business/news" className={styles.subBtn}>Business news</Link>
+              <Link href="/business/business-news" className={styles.subBtn}>Business news</Link>
               <Link href="/business/market-trends" className={styles.subBtn}>Market trends</Link>
-              <Link href="/business/internships" className={styles.subBtn}>Internship opportunities</Link>
+              <Link href="/business/internship-opportunities" className={styles.subBtn}>Internship opportunities</Link>
               <Link href="/business/career-advice" className={styles.subBtn}>Career advice</Link>
             </ul>
           </div>
