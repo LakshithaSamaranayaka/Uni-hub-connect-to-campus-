@@ -1,8 +1,19 @@
+"use client";
+import { motion, scale } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer"; 
 import styles from "./home.module.css";
+import { tr } from "framer-motion/client";
+
+
+const slowPopUp = {
+  hidden: { opacity: 0, y: 60 },
+  scale: { scale: 0.95 },
+  visible: { opacity: 1, y: 0 },
+  transition: { duration: 3 , ease: "easeOut" },
+};
 
 export default function HomePage() {
   return (
@@ -11,7 +22,13 @@ export default function HomePage() {
         
 
       <section className={styles.hero}>
-        <div className={styles.heroLeft}>
+        <motion.div
+          className={styles.heroLeft}
+          initial="hidden"
+          variants={slowPopUp}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.8}}
+        >
           <h1 className={styles.h1}>It’s your future</h1>
           <h2 className={styles.h2}>Connect.Learn.Grow-Together.</h2>
 
@@ -21,10 +38,10 @@ export default function HomePage() {
             <span className={styles.dot} />
             <span className={styles.dot} />
           </div>
-        </div>
+        </motion.div>
 
-        <div className={styles.heroRight}>
-          <div className={styles.blob}>
+        <motion.div className={styles.heroRight}>
+          <motion.div className={styles.blob}>
             <Image
               src="/1page backg.png"
               alt="Student"
@@ -33,7 +50,7 @@ export default function HomePage() {
               // className={styles.heroImg}
               priority
             />
-          </div>
+          </motion.div>
 
 
         <div className={styles.heroRight1}>
@@ -46,22 +63,48 @@ export default function HomePage() {
               priority
             />
           </div>
-        </div>
+        </motion.div>
       </section>
 
-       <p className={styles.smallText}>Improve your knowledge</p>
-        <h4 className={styles.MidcardTitle}>Personalized learning</h4>
-        <h4 className={styles.MidcardTitle1}>Students practice at their own pace, first filling in gaps in their understanding and then accelerating their learning.</h4>
-        <h4 className={styles.MidcardTitle2}>Trusted content</h4>
-        <h4 className={styles.MidcardTitle3}>Created by experts, library of trusted practice and lessons covers math, science, and more. Always free for learners.</h4>
-        <h4 className={styles.MidcardTitle4}>Tools to empower teachers</h4>
-        <h4 className={styles.MidcardTitle5}>With Uni Hub, teachers can identify gaps in their students’ understanding, tailor instruction, and meet the needs of every student.</h4>
+       <motion.p
+          className={styles.smallText}
+          initial="hidden"
+          variants={slowPopUp}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.8 }}
+        >
+          Improve your knowledge
+        </motion.p>
+        <motion.h4 className={styles.MidcardTitle} initial="hidden" variants={slowPopUp} whileInView="visible" viewport={{ once: true, amount: 0.8 }}>
+          Personalized learning
+        </motion.h4>
+        <motion.h4 className={styles.MidcardTitle1} initial="hidden" variants={slowPopUp} whileInView="visible" viewport={{ once: true, amount: 0.8 }}>
+          Students practice at their own pace, first filling in gaps in their understanding and then accelerating their learning.
+        </motion.h4>
+        <motion.h4 className={styles.MidcardTitle2} initial="hidden" variants={slowPopUp} whileInView="visible" viewport={{ once: true, amount: 0.8 }}>
+          Tracked content
+        </motion.h4>
+        <motion.h4 className={styles.MidcardTitle3} initial="hidden" variants={slowPopUp} whileInView="visible" viewport={{ once: true, amount: 0.8 }}>
+          Created by experts, library of trusted practice and lessons covers math, science, and more. Always free for learners.
+        </motion.h4>
+        <motion.h4 className={styles.MidcardTitle4} initial="hidden" variants={slowPopUp} whileInView="visible" viewport={{ once: true, amount: 0.8 }}>
+          Tools to empower teachers
+        </motion.h4>
+        <motion.h4 className={styles.MidcardTitle5} initial="hidden" variants={slowPopUp} whileInView="visible" viewport={{ once: true, amount: 0.8 }}>
+          With Uni Hub, teachers can identify gaps in their students’ understanding, tailor instruction, and meet the needs of every student.
+        </motion.h4>
 
       <h3 className={styles.sectionTitle}>Select&nbsp;&nbsp;Your&nbsp;&nbsp;Subject</h3>
 
       <section className={styles.subjects}>
 
-        <div className={styles.cards}>
+        <motion.div className={styles.cards}
+          initial="hidden"
+          variants={slowPopUp}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.8 }}
+        >
+
           <div className={styles.card}>
             <h4 className={styles.cardTitle}>Computing</h4>
             <div className={styles.subBtns}>
@@ -87,14 +130,19 @@ export default function HomePage() {
             <ul className={styles.list}>
               <Link href="/engineering/engineering-notes" className={styles.subBtn}>Engineering notes</Link>
               <Link href="/engineering/project-ideas" className={styles.subBtn}>Project ideas</Link>
-              <Link href="/engineering/internships" className={styles.subBtn}>Internship opportunities</Link>
+              <Link href="/engineering/internship-opportunities" className={styles.subBtn}>Internship opportunities</Link>
             </ul>
           </div>
-        </div>
+        </motion.div>
       </section>
 
     <section className={styles.unirawsection}>
-      <div className={styles.uniraw}>
+      <motion.div className={styles.uniraw}
+        initial="hidden"
+        variants={slowPopUp}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.8 }}
+      >
           <p className={styles.subline}>Learn from 20+ top local and foreign universities</p>
             <div className={styles.unirawImage}>
              <Image
@@ -138,10 +186,15 @@ export default function HomePage() {
               priority
             />
             </div>
-      </div>
+      </motion.div>
     </section>
     <section className={styles.middlebar}>
-      <div className={styles.middlebarContent}>
+      <motion.div className={styles.middlebarContent}
+        initial="hidden"
+        variants={slowPopUp}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.9 }}
+      >
         <Image
           src="/2nd back.png"
           alt="Middle Bar"
@@ -165,7 +218,7 @@ export default function HomePage() {
         className={styles.middlebarImg3}
       />
       </div>
-        </div>
+        </motion.div>
       <p className={styles.middleText}>Achieve your career goals with </p>
       <p className={styles.middleText2}>Uni Hub.</p> 
       <p className={styles.middleText3}>Built  For Students. Powered by Community.</p>
