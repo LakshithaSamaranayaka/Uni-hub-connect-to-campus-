@@ -14,6 +14,7 @@ export default function Navbar() {
             <Link className={Styles.link} href="/contact">Contact</Link>
             <Link className={Styles.link} href="/community">Community</Link>
             <Link className={Styles.link} href="/profile">Profile</Link>
+            <Link href="/auth/login" className={Styles.link}>Login</Link>
         </nav>
 
     </div>

@@ -1,6 +1,9 @@
 .page {
 min-height: 100vh;
-background: radial-gradient(1200px 700px at 20% 10%, #31193a 0%, #31193a 55%, #000000 100%);
+background-image:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("/bg.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 color: #fff;
 }
 .main {
@@ -8,6 +11,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 }
+
 .maincard {
 width: 80%;
 height: 700px;
@@ -17,11 +21,11 @@ background: rgba(167, 105, 171, 0.15);
 backdrop-filter: blur(12px);
 color: #111;
 border-radius: 14px;
-box-shadow: 0 14px 30px rgba(168, 68, 186, 0.415)
+box-shadow: 0 14px 30px rgba(0, 0, 0, 0.415)
 }
 .maincard:hover {
-box-shadow: 0 0 25px rgba(180, 120, 255, 0.8);
-box-shadow: 0 0 50px rgba(180, 120, 255, 0.5);
+box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
 transform: scale(1.02);
 transition: 0.3s ease;
 }

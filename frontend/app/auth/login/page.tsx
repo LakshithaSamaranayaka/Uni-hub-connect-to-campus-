@@ -1,45 +1,69 @@
-import styles  from "./login.module.css";
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import styles from "./login.module.css";
+
 export default function LoginPage() {
+  const router = useRouter();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  function handleLogin(e: React.FormEvent) {
+    e.preventDefault();
+
+    if (!email || !password) {
+      alert("Please enter email and password.");
+      return;
+    }
+
+    alert("Login successful");
+    router.push("/home");
+  }
+
   return (
-    <div className={styles.bg}>
-    <div className={styles["split-card"]}>
-        <div className={styles.left}>
-     <h2>Sign In</h2>
-     <p>Welcome Back! Please enter your details.</p>
-    <form className={styles.form}>
-      <input type="email" placeholder="Email" required />
-      <input type="password" placeholder="Password" required />
-      <button className={`${styles["btn"]} ${styles.solid}`} type="button">Sign In</button>
-    </form>
-      
-  </div>
+    <main className={styles.page}>
+      <div className={styles.card}>
+        <h1 className={styles.title}>Sign In</h1>
+        <p className={styles.subtitle}>
+          Welcome back to Campus Connect
+        </p>
 
-    <div className={styles.right}>
-    <h2>Hello, Friend !</h2>
-    <p> Enter your personal details and start journey with us.</p>
-    <button className={`${styles["btn"]} ${styles.outline}`}>Sign Up</button>
+        <form className={styles.form} onSubmit={handleLogin}>
+          <div className={styles.field}>
+            <label>Email</label>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              autoComplete="off"
+            />
+          </div>
 
-          <div className={styles.social}>
-              <button type="button" className={styles.socialBtn}>
-                <Image src="/icons8-facebook-48.png" alt="Facebook" width={60} height={50} />    
-    </button> 
-              <button type="button" className={styles.socialBtn}>
-                <Image src="/instagram.png" alt="Instagram" width={33} height={20}  />
-    </button> 
-              <button type="button" className={styles.socialBtn}>
-                <Image src="/icons8-linkedin-48.png" alt="LinkedIn" width={60} height={50} />
-    </button> 
+          <div className={styles.field}>
+            <label>Password</label>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete="new-password"
+            />
+          </div>
 
-    </div>
+          <button className={styles.btn} type="submit">
+            Sign In
+          </button>
+        </form>
 
-        </div>
-  
-    </div> 
-    </div>
- 
-
-    
-  );}
-
-
+        <p className={styles.bottomText}>
+          Don&apos;t have an account?{" "}
+          <Link href="/auth/register">Sign up</Link>
+        </p>
+      </div>
+    </main>
+  );
+}

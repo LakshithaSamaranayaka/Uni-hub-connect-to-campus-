@@ -9,6 +9,10 @@ const userSchema = new monggoose.Schema(
             minlength: 2,
             maxlength: 50,
         },
+        university: {
+            type: String,
+            required: true,
+        },
         email: {
             type: String,
             required: true,

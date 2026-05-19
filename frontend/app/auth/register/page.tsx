@@ -1,43 +1,86 @@
-import styles  from "./register.module.css";
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import styles from "./register.module.css";
+
 export default function RegisterPage() {
+  const router = useRouter();
+
+  const [name, setName] = useState("");
+  const [university, setUniversity] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  function handleRegister(e: React.FormEvent) {
+    e.preventDefault();
+
+    if (!name || !university || !email || !password) {
+      alert("Please fill all fields.");
+      return;
+    }
+
+    alert("Account created successfully UI demo");
+    router.push("/auth/login");
+  }
+
   return (
-    <div className={styles.bg}>
-    <div className={styles["split-card"]}>
-  <div className={styles.left}>
-    <h2>Welcome Back !</h2>
-    <p> To keep connected with us please login with your personal info.</p>
-    <button className={`${styles["btn"]} ${styles.outline}`}>Sign In</button>
+    <main className={styles.page}>
+      <div className={styles.card}>
+        <h1 className={styles.title}>Create Account</h1>
+        <p className={styles.subtitle}>Join Campus Connect and start learning</p>
 
-    <div className={styles.social}>
-    <button type="button" className={styles.socialBtn}>
-      <Image src="/icons8-facebook-48.png" alt="Facebook" width={60} height={50} />    
-    </button> 
-    <button type="button" className={styles.socialBtn}>
-      <Image src="/instagram.png" alt="Instagram" width={33} height={20}  />
-    </button> 
-    <button type="button" className={styles.socialBtn}>
-      <Image src="/icons8-linkedin-48.png" alt="LinkedIn" width={60} height={50} />
-    </button> 
-    </div>
-  </div>
+        <form className={styles.form} onSubmit={handleRegister}>
+          <div className={styles.field}>
+            <label>Full Name</label>
+            <input
+              type="text"
+              placeholder="Enter your full name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
 
-  <div className={styles.right}>
-    <h2>Create Account</h2>
-    <form className={styles.form}>
-      <input type="text" placeholder="First Name" />
-      <input type="text" placeholder="Last Name" />
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
-      <input type="password" placeholder="Confirm Password" />
+          <div className={styles.field}>
+            <label>University / Institute</label>
+            <input
+              type="text"
+              placeholder="Enter your university"
+              value={university}
+              onChange={(e) => setUniversity(e.target.value)}
+            />
+          </div>
 
-      <button className={`${styles["btn"]} ${styles.solid}`} type="button">Sign Up</button>
-    </form>
-  </div>
-</div>
+          <div className={styles.field}>
+            <label>Email</label>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
 
-    </div> 
+          <div className={styles.field}>
+            <label>Password</label>
+            <input
+              type="password"
+              placeholder="Create a password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
 
-    
+          <button className={styles.btn} type="submit">
+            Sign Up
+          </button>
+        </form>
+
+        <p className={styles.bottomText}>
+          Already have an account? <Link href="/auth/login">Sign in</Link>
+        </p>
+      </div>
+    </main>
   );
 }

@@ -1,61 +1,53 @@
-"use client"
-import Image from "next/image";
+import Link from "next/link";
 import styles from "./profile.module.css";
 
 export default function ProfilePage() {
   return (
-    <main>
-    <div className={styles.page1}></div>
-      <div className={styles.card}>
-        {/* top actions */}
+    <main className={styles.page}>
+      <section className={styles.card}>
         <div className={styles.topRow}>
-          <button className={styles.topBtn} type="button">
+          <Link href="/profile/Edit" className={styles.editBtn}>
             Edit Profile
-          </button>
-        </div>
+          </Link>
 
-        <div className={styles.avatarWrap}>
-          <Image
-            src="/avatar.jpg"
-            alt="Profile"
-            width={120}
-            height={120}
-            className={styles.avatar}
-            priority
-          />
-        </div>
-
-        {/* main info */}
-        <h1 className={styles.name}>Samantha Jones</h1>
-        <p className={styles.location}>New York, United States</p>
-
-        <div className={styles.meta}>
-          <p>Web Producer - Web Specialist</p>
-          <p>Columbia University - New York</p>
-        </div>
-
-        <p className={styles.pitch}>
-          &quot;Submit your valuable work — we’ll showcase your talent to the world
-          while inspiring fellow students to learn, collaborate, and grow
-          together.
-        </p>
-
-        {/* bottom row */}
-        <div className={styles.bottomRow}>
-          <button className={styles.linkBtn} type="button">
-            Contact details
-          </button>
-
-          <button className={styles.cta} type="button">
-            Upload Your work
-          </button>
-
-          <button className={styles.logoutBtn} type="button">
+          <Link href="/auth/login" className={styles.logoutBtn}>
             Log out
-          </button>
-
+          </Link>
         </div>
-      </div>
-</main>    
+
+        <div className={styles.avatar}>L</div>
+
+        <div className={styles.content}>
+          <h1 className={styles.name}>Lakshitha Samaranayaka</h1>
+          <p className={styles.location}>Kurunegala, Sri Lanka</p>
+
+          <div className={styles.meta}>
+            <p>Software Engineering Student</p>
+            <p>University of Plymouth</p>
+          </div>
+
+          <p className={styles.bio}>
+            Passionate student focused on full-stack development, academic
+            resource sharing, and building useful digital platforms for learners.
+          </p>
+        </div>
+
+        <div className={styles.bottomRow}>
+          <div className={styles.infoBox}>
+            <h3>Contact Details</h3>
+            <p>lakshitha@email.com</p>
+          </div>
+
+          <Link href="/home" className={styles.homeBtn}>
+            Back to Home
+          </Link>
+
+          <div className={styles.infoBox}>
+            <h3>Role</h3>
+            <p>Student</p>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

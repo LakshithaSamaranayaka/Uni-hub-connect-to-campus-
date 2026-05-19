@@ -2,6 +2,10 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+background-image:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("/bg.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .main {
@@ -10,12 +14,6 @@
   justify-content: center;
   align-items: center;
   padding: 60px 20px;
-  background:
-    radial-gradient(circle at 15% 25%, rgba(255,255,255,0.18) 0 120px, transparent 121px),
-    radial-gradient(circle at 85% 20%, rgba(255,255,255,0.14) 0 100px, transparent 101px),
-    radial-gradient(circle at 80% 80%, rgba(255,255,255,0.12) 0 130px, transparent 131px),
-    radial-gradient(circle at 25% 85%, rgba(255,255,255,0.10) 0 160px, transparent 161px),
-    linear-gradient(135deg, #ff4e50, #f9d423);
 }
 
 .card {
