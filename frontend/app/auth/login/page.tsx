@@ -11,17 +11,43 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleLogin(e: React.FormEvent) {
-    e.preventDefault();
+  async function handleLogin(e: React.FormEvent) {
+  e.preventDefault();
 
-    if (!email || !password) {
-      alert("Please enter email and password.");
+  if (!email || !password) {
+    alert("Please enter email and password.");
+    return;
+  }
+
+  try {
+    const res = await fetch("http://localhost:5000/api/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      alert(data.message || "Invalid email or password");
       return;
     }
 
+    localStorage.setItem("token", data.token);
+    localStorage.setItem("user", JSON.stringify(data.user));
+
     alert("Login successful");
     router.push("/home");
+  } catch (error) {
+    console.error(error);
+    alert("Backend server error. Please check backend is running.");
   }
+}
 
   return (
     <main className={styles.page}>

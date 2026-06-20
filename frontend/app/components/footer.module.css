@@ -46,7 +46,7 @@
 .footertitles {
   font-weight: 700;
   font-size: 20px;
-  margin-left: 650px;
+  margin-left: 700px;
   margin-top: -280px;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -56,7 +56,7 @@
   flex-direction: column;
   gap: 28px;
   align-items: flex-start;
-  margin: 35px 0 0 650px;
+  margin: 35px 0 0 700px;
   padding: 0;
 }
 .footerBtns1{
@@ -64,7 +64,7 @@
   flex-direction: column;
   gap: 28px;
   align-items: flex-start;
-  margin: -134px 0 0 910px;
+  margin: -134px 0 0 1000px;
   padding: 0;
 }
 .footerBtns2{
@@ -72,7 +72,7 @@
   flex-direction: column;
   gap: 28px;
   align-items: flex-start;
-  margin: -140px 0 0 1170px;
+  margin: -140px 0 0 1300px;
   padding: 0;
 }
 .footerBtns3{
@@ -80,7 +80,7 @@
   flex-direction: column;
   gap: 28px;
   align-items: flex-start;
-  margin: -249px 0 0 1420px;
+  margin: -249px 0 0 1593px;
   padding: 0;
 }
 .footerLink{
@@ -100,7 +100,7 @@
   display: flex;
   gap: 10px;
   margin-top: 20px;
-  margin-left: 1415px;
+  margin-left: 1590px;
 }
 .socialIcons img {
   object-fit: contain;

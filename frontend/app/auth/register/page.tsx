@@ -13,17 +13,42 @@ export default function RegisterPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleRegister(e: React.FormEvent) {
-    e.preventDefault();
+  async function handleRegister(e: React.FormEvent) {
+  e.preventDefault();
 
-    if (!name || !university || !email || !password) {
-      alert("Please fill all fields.");
+  if (!name || !university || !email || !password) {
+    alert("Please fill all fields.");
+    return;
+  }
+
+  try {
+    const response = await fetch("http://localhost:5000/api/auth/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        university,
+        email,
+        password,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      alert(data.message || "Registration failed");
       return;
     }
 
-    alert("Account created successfully UI demo");
+    alert("Account created successfully");
     router.push("/auth/login");
+  } catch (error) {
+    console.error(error);
+    alert("Server error. Please check backend.");
   }
+}
 
   return (
     <main className={styles.page}>
